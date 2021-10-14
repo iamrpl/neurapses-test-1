@@ -1,0 +1,141 @@
+<div class="container">
+    <div class="col-md-12">
+
+        <div class="header-content m-3">
+            <h3>Add Employer</h3>
+
+            <button class="btn btn-danger btn-reset btn-back" routerLink="">Back</button>
+
+        </div>
+
+        <!-- employer form starts here -->
+        <div class="employer-form">
+            <form [formGroup]="addEmployerForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="name"> Employee Name <span class="required-field">*</span></label>
+                        <input type="text" class="form-control" formControlName="employeeName" style="height: 55px;">
+            
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeName'].invalid && addEmployerForm.controls['employeeName'].touched">
+                            Enter valid name 
+                        </div>
+                    </div>
+            
+                    <div class="col-md-6">
+    
+                        <label for="email"> Employee Email <span class="required-field">*</span></label>
+    
+                        <input type="text" class="form-control" formControlName="employeeEmail" style="height: 55px;">
+    
+    
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeEmail'].invalid && addEmployerForm.controls['employeeEmail'].touched">
+                             Enter valid email 
+                        </div>
+                    </div>
+            
+                </div>
+                <br>
+    
+                <div class="row">
+                    <div class="col-md-6">
+    
+                        <label for="dob"> Employee Date of birth <span class="required-field">*</span></label>
+    
+                        <input type="date" class="form-control" formControlName="employeeDOB">
+            
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeDOB'].invalid && addEmployerForm.controls['employeeDOB'].touched">
+                            Enter valid date 
+                        </div>
+                    </div>
+            
+                    <div class="col-md-6">
+    
+                        <label for="gender"> Employee Gender <span class="required-field">*</span></label>
+    
+                        <select class="form-select" aria-label="Default select example" formControlName="employeeGender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+            
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeGender'].invalid && addEmployerForm.controls['employeeGender'].touched">
+                             Please select gender 
+                        </div>
+                    </div>
+            
+                </div>
+                <br>
+    
+                <div class="row">
+                    <div class="col-md-6">
+    
+                        <label for="doj"> Employee Date of joining <span class="required-field">*</span></label>
+    
+                        <input type="date" class="form-control" formControlName="employeeDOJ">
+            
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeDOJ'].invalid && addEmployerForm.controls['employeeDOJ'].touched">
+                            Enter date of joining 
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+    
+                        <label for="martialstatus"> Employee Martial Status <span class="required-field">*</span></label>
+    
+                        <select class="form-select" aria-label="Default select example" formControlName="employeeMartialStatus">
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="separated">Separated</option>
+                            <option value="divorced">Divorced</option>
+                          </select>
+    
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeMartialStatus'].invalid && addEmployerForm.controls['employeeMartialStatus'].touched">
+                            Please select any 
+                        </div>
+                    </div>
+                </div>        
+                <br>
+    
+                <div class="row">
+                    <div class="col-md-6">
+    
+                        <label for="contactno"> Employee Contact no. <span class="required-field">*</span></label>
+    
+                        <input type="text" class="form-control" formControlName="employeeContactNo" minlength="10" maxlength="10">
+            
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeContactNo'].invalid && addEmployerForm.controls['employeeContactNo'].touched">
+                            Enter valid number 
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+    
+                        <label for="address"> Employee Address <span class="required-field">*</span></label>
+    
+                        <input type="text" class="form-control" formControlName="employeeAddress">
+            
+                        <div class="error-message" *ngIf="addEmployerForm.controls['employeeAddress'].invalid && addEmployerForm.controls['employeeAddress'].touched">
+                            Enter valid address 
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12 text-center">
+    
+                        <button class="btn btn-danger btn-reset" *ngIf="!updateEmployer" (click)="addEmployerForm.reset()">Reset</button>
+    
+                        <button type="submit" *ngIf="!updateEmployer" class="btn btn-success m-3" [disabled]="addEmployerForm.invalid" (click)="addEmployer()">Add Employee</button>
+
+                        <button class="btn btn-success m-3" *ngIf="updateEmployer" (click)="updateEmployerDetails()">Update</button>
+    
+                    </div>
+                </div>
+    
+            </form>
+        </div>
+        <!-- employer form ends here -->
+
+    </div>
+</div>

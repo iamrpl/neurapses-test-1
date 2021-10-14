@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="col-md-12">
+
+    <div class="header-content m-3">
+      <h4> Employer Details </h4>
+
+      <button class="btn btn-danger btn-reset addEmployeeBtn" routerLink="/add-employer">Add Employee</button>
+
+    </div>
+
+    <!-- employer table starts here -->
+      <div class="employer-table">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">Sr No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">DOB</th>
+              <th scope="col">Date of Joining</th>
+              <th scope="col">Martial Status</th>
+              <th scope="col">Contact No.</th>
+              <th scope="col">Address</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let details of employerDetailsService.employeeDetails; let i= index">
+              <td scope="row">{{i + 1}}</td>
+              <td>{{details.employeeName | titlecase}}</td>
+              <td>{{details.employeeEmail}}</td>
+              <td>{{details.employeeDOB}}</td>
+              <td>{{details.employeeDOJ}}</td>
+              <td>{{details.employeeMartialStatus | titlecase}}</td>
+              <td>{{details.employeeContactNo}}</td>
+              <td>{{details.employeeAddress | titlecase}}</td>
+              <td><i class="fa fa-pencil-square-o fa-icon-edit" aria-hidden="true" (click)="editEmmployerDetails(i)"></i></td>
+              <td><i class="fa fa-trash fa-icon-delete" aria-hidden="true" (click)="deleteEmployer(i)"></i></td>
+            </tr>
+          </tbody>
+      </table>
+      </div>
+      <!-- employer table ends here -->
+
+  </div>
+</div>

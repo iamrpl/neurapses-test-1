@@ -1,0 +1,38 @@
+th, td {
+    border: 1px solid #ced4da !important;
+    border-top: none !important;
+    text-align: center;
+}
+
+th {
+    background-color: #f0595d;
+    color: aliceblue;
+    font-weight: 300;
+}
+
+.addEmployeeBtn {
+    height: 40px;
+    margin-left: 63rem;
+    width: 10rem;
+    font-size: 14px;
+}
+
+.fa-icon-edit {
+    color: green;
+    font-size: 20px;
+}
+
+.fa-icon-delete {
+    color: red;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+   .table-content {
+     overflow-y: scroll;
+   }
+
+   .addEmployeeBtn {
+    margin-left: 10px;
+}
+}

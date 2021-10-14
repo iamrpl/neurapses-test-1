@@ -1,0 +1,20 @@
+form {
+    border:  1px solid #ced4da;
+    padding: 3rem;
+}
+
+input, select {
+    margin-top: 1rem;
+}
+
+.btn-back {
+    height: 40px;
+    margin-left: 69rem;
+}
+
+@media (max-width: 600px) {
+
+   .btn-back {
+    margin-left: 8rem;
+}
+}
